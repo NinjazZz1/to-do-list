@@ -70,4 +70,9 @@ nav > div {
 .modal {
     border: 1px solid black;
     border-radius: 12px;
+    width: 100%;
+}
+
+.container {
+    width: 100%;
 }
