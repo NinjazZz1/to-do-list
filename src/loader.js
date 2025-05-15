@@ -1,4 +1,7 @@
+import ProjectManager from "./projectManager";
+
 export default function loadProject(project) {
+    let id = 0;
     clearContent();
     const directory = document.querySelector('#directory');
     directory.innerHTML = "Projects/" + project.title;
@@ -32,18 +35,23 @@ export default function loadProject(project) {
 
     // TO BE ARRAY LOOP
     const taskList = document.createElement("h3");
-
     project.toDo.forEach(task => {
-        console.log(task);
         const checkBox = document.createElement("button")
-        checkBox.classList.add("prio")
+        checkBox.classList.add(`${task.priority}`);
+        checkBox.setAttribute("id", id);
+
         const spanContainer = document.createElement("span");
         const textElement = document.createElement("h3");
         const lineBreak = document.createElement("hr");
 
-        textElement.innerHTML = `${task.priority.toString()} | ${task.task}`;
+        textElement.innerHTML = `| ${task.task}`;
         spanContainer.append(checkBox, textElement);
         tasksSection.append(spanContainer, lineBreak);
+
+        checkBox.addEventListener("click", () => {
+            ProjectManager.removeTodo(Number(checkBox.getAttribute("id")));
+        })
+        id++;
     });
 
     // taskList.innerHTML = "---";

@@ -26,7 +26,7 @@ const ProjectManager = (() => {
     const getProjects = () => projects;
 
     const createProject = (title, description, dueDate, priority, toDo) => {
-        const toDos = [];
+        let toDos = [];
         toDo.forEach(element => {
             const i = new ToDo(element[0], element[1], element[2]);
             toDos.push(i);
@@ -43,10 +43,25 @@ const ProjectManager = (() => {
         loadProject(projects[projectNo]);
     }
 
+    const removeTodo = (element) => {
+        console.log(element)
+        projects[0].toDo.splice(element, 1);
+        console.log(projects[0].toDo[element]);
+        loadProject(projects[0]);
+    }
+
+    const addTodo = (priority, dueDate, task) => {
+        const i = new ToDo(priority, dueDate, task);
+        projects[0].toDo.push(i);
+        loadProject(projects[0]);
+    }
+
     return {
         getProjects,
         createProject,
         displayProject,
+        removeTodo,
+        addTodo
     }
 })();
 
