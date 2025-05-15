@@ -10,6 +10,14 @@ class Project {
     } 
 }
 
+class ToDo {
+    constructor(priority, dueDate, task) {
+        this.priority = priority;
+        this.dueDate = dueDate;
+        this.task = task;
+    }
+}
+
 const ProjectManager = (() => {
     let projects = [];
 
@@ -18,19 +26,27 @@ const ProjectManager = (() => {
     const getProjects = () => projects;
 
     const createProject = (title, description, dueDate, priority, toDo) => {
-        const newProject = new Project(title, description, dueDate, priority, toDo);   
-        console.log(newProject);
+        const toDos = [];
+        toDo.forEach(element => {
+            const i = new ToDo(element[0], element[1], element[2]);
+            toDos.push(i);
+        });
+        const newProject = new Project(title, description, dueDate, priority, toDos);   
         addProject(newProject);
-        loadProject(newProject);
     }
 
     const addProject = (project) => {
         projects.push(project);
     }
 
+    const displayProject = (projectNo) => {
+        loadProject(projects[projectNo]);
+    }
+
     return {
         getProjects,
-        createProject
+        createProject,
+        displayProject,
     }
 })();
 

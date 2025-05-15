@@ -1,5 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
+:root {
+    --prio1: red;
+    --prio2: rgb(39, 98, 165);
+    --prio3: rgb(99, 165, 13);
+    --prioDefault: black;
+}
+
 body {
     background-color: rebeccapurple;
     display: flex;
@@ -46,6 +53,7 @@ nav > div {
 .card {
     width: 100%;
     border-radius: 12px;
+    margin-bottom: 16px;
 }
 
 .project-container {
@@ -75,4 +83,36 @@ nav > div {
 
 .container {
     width: 100%;
+}
+
+span {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+}
+
+span > h3 {
+    margin: 0;
+}
+
+span > button, .prio {
+    border-radius: 50%;
+    background-color: white;
+    border: 1px solid black;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    color: rgb(59, 204, 59);
+    font-size: 1rem;
+    height: 30px;
+    width: 30px;
+}
+
+.task {
+    margin-bottom: 16px;
+}
+
+.add-task-modal {
+    margin-bottom: 16px;
+    margin-top: 16px;
 }
