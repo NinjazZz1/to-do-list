@@ -26,7 +26,7 @@ const createModal = () => {
             // SEND ERROR
         } else {
             e.preventDefault();
-            ProjectManager.addTodo(priority.value, dueDate.value, title.value)
+            ProjectManager.addTodo(priority.value, dueDate.value, title.value, description.value)
         }
     })
 

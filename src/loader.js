@@ -30,6 +30,7 @@ export default function loadProject(project) {
     card.classList.add("card");
 
     const tasksSection = document.createElement("div");
+    tasksSection.classList.add("tasks-section")
 
     const subHeader = document.createElement("h2");
     subHeader.innerHTML = "Tasks";
@@ -37,6 +38,8 @@ export default function loadProject(project) {
     // TO BE ARRAY LOOP
     const taskList = document.createElement("h3");
     project.toDo.forEach(task => {
+        const taskContainer = document.createElement("div");
+        taskContainer.classList.add("task")
         const checkBox = document.createElement("button")
         checkBox.classList.add(`${task.priority}`);
         checkBox.setAttribute("id", id);
@@ -45,9 +48,13 @@ export default function loadProject(project) {
         const textElement = document.createElement("h3");
         const lineBreak = document.createElement("hr");
 
-        textElement.innerHTML = `| ${task.task}`;
+        const description = document.createElement("p");
+
+        textElement.innerHTML = `${task.task}`;
+        description.innerHTML = `${task.description}`;
         spanContainer.append(checkBox, textElement);
-        tasksSection.append(spanContainer, lineBreak);
+        taskContainer.append(spanContainer, description, lineBreak);
+        tasksSection.append(taskContainer);
 
         checkBox.addEventListener("click", () => {
             ProjectManager.removeTodo(Number(checkBox.getAttribute("id")));
@@ -61,6 +68,7 @@ export default function loadProject(project) {
     card.appendChild(subHeader);
     elements.append(headers, card, tasksSection);
     section.appendChild(elements);
+    card.appendChild(tasksSection)
 
     // ADD MODAL BACK
     const modal = document.createElement("span");
@@ -72,7 +80,7 @@ export default function loadProject(project) {
     modalText.innerHTML = "Add Task";
 
     modal.append(button, modalText);
-    tasksSection.append(modal);
+    //tasksSection.append(modal);
 
     button.addEventListener("click", () => {
         //
