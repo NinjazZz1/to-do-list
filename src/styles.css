@@ -131,3 +131,12 @@ span > button, .prio {
 .low {
     border-color: var(--prio3);
 }
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+.inline-segment {
+    display: flex;
+}

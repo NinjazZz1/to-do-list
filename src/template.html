@@ -48,8 +48,34 @@
                 </div>
             </div>
             <div class="modal">
-                <h2 class="modals modal-title">Modal Title</h2>
-                <h3 class="modals modal-desc">Description</h3>
+                <form id="form">
+                    <div class="title-section">
+                        <label for="title"></label>
+                        <input type="text" name="title" id="title" placeholder="Complete CSS draft">
+                    </div>
+                    <div class="desc-section">
+                        <label for="description"></label>
+                        <input type="text" name="description" id="description" placeholder="Description">
+                    </div>
+                    <div class="inline-segment">
+                        <div class="date-section">
+                            <label for="dueDate"></label>
+                            <input type="date" id="dueDate" name="dueDate">
+                        </div>  
+                        <div class="prio-section">
+                            <label for="prio-select"></label>
+                            <select name="prio" id="prio">
+                                <option value="none">None</option>
+                                <option value="low">Low</option>
+                                <option value="medium">Medium</option>
+                                <option value="high">High</option>
+                            </select>
+                        </div>  
+                    </div>
+                    <div class="inline-segment">
+                        <button class="addBtn" type="submit">Add task</button>
+                    </div>                           
+                </form>
             </div>
         </div>
     </div>
