@@ -1,4 +1,5 @@
 import ProjectManager from "./projectManager";
+import createModal from "./createTodo";
 
 export default function loadProject(project) {
     let id = 0;
@@ -72,6 +73,11 @@ export default function loadProject(project) {
 
     modal.append(button, modalText);
     tasksSection.append(modal);
+
+    button.addEventListener("click", () => {
+        //
+    })
+    
 } 
 
 function clearContent() {

@@ -135,8 +135,35 @@ span > button, .prio {
 form {
     display: flex;
     flex-direction: column;
+    padding: 10px;
+    gap: 8px;
 }
 
 .inline-segment {
     display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+#title,
+#description,
+#dueDate,
+#prio,
+#project {
+    font-size: 1rem;
+    border: none;
+    background: none;
+}
+
+#title {
+    font-size: 1.5rem;
+    width: 100%;
+}
+
+#description {
+    width: 100%;
+}
+
+.footer-modal {
+    justify-content: space-between;
 }
