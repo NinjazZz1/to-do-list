@@ -173,3 +173,7 @@ p {
     font-size: 0.9rem;
     color: grey;
 }
+
+.due-date {
+    margin-left: auto;
+}

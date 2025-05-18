@@ -17,6 +17,7 @@ export default function loadProject(project) {
 
     const title = document.createElement("h2");
     title.classList.add("project-title");
+
     title.innerHTML = project.title;
     const description = document.createElement("h3");
     description.classList.add("project-description");
@@ -48,11 +49,15 @@ export default function loadProject(project) {
         const textElement = document.createElement("h3");
         const lineBreak = document.createElement("hr");
 
+        const dueDate = document.createElement("p");
+        dueDate.classList.add("due-date");
+        dueDate.innerHTML = task.dueDate;
+
         const description = document.createElement("p");
 
         textElement.innerHTML = `${task.task}`;
         description.innerHTML = `${task.description}`;
-        spanContainer.append(checkBox, textElement);
+        spanContainer.append(checkBox, textElement, dueDate);
         taskContainer.append(spanContainer, description, lineBreak);
         tasksSection.append(taskContainer);
 

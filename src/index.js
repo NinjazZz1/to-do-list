@@ -3,7 +3,7 @@ import ProjectManager from "./projectManager";
 import createModal from "./createTodo";
 
 let toDo = [
-    // ["high", "None", "Setup HTML"],
+    ["high", "2025-05-05", "Setup HTML", "Setup boilerplate"],
     // ["medium", "None", "Setup CSS"],
     // ["low", "None", "Setup JS"],
 ];
